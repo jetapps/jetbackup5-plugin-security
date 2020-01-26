@@ -1,0 +1,42 @@
+<div ng-controller="addonHelloWorld" class="controller-box">
+    <h1>{{ lang.t("Hello World") }}</h1>
+    <p>{{ lang.t("This is the hello world plugin") }}</p>
+
+    <div ng-if="status" class="status-bar">
+        <alert-box ng-model="status"></alert-box>
+    </div>
+
+    <fieldset class="row" >
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <br>
+                    <form data-parsley-validate="" class="form-horizontal form-label-left" novalidate>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="myfield">{{ lang.t("My Field") }} <span class="required">*</span></label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="myfield" required="required" class="form-control col-md-7 col-xs-12" type="text" ng-model="saveData.options.myfield" value="saveData.options.myfield" />
+                            </div>
+                        </div>
+
+                        <div ng-controller="addonHelloWorld_Extra">
+                            ** This is from inside the extraController
+                        </div>
+
+                        <div>
+                            ** The plugin media public dir is: {{publicDir}}
+                        </div>
+                        <div class="ln_solid"></div>
+                        <div class="form-group">
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                                <button type="button" class="btn btn-primary" ng-click="saveChanges()" ng-disabled="saveing">{{ lang.t("Save") }}</button>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
